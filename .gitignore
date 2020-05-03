@@ -1,0 +1,14 @@
+# Compiled output
+/dist
+/tmp
+/out-tsc
+
+# Shell scripts
+*.sh
+
+# Dependencies
+/node_modules
+
+# System files
+.DS_Store
+Thumbs.db

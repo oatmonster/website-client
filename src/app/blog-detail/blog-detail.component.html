@@ -1,0 +1,4 @@
+<div *ngIf="this.post; else notFound" [markdown]="post.content"></div>
+<ng-template #notFound>
+  <az-not-found></az-not-found>
+</ng-template>

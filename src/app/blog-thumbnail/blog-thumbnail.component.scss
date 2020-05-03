@@ -1,0 +1,27 @@
+img.thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.img-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-around;
+}
+
+p.subtitle { 
+  font-size: 18px;
+}
+
+p {
+  margin: 0;
+}

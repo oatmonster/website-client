@@ -1,0 +1,45 @@
+{
+  "name": "alexzhao",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build"
+  },
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "@angular/animations": "~9.0.6",
+    "@angular/common": "~9.0.6",
+    "@angular/compiler": "~9.0.6",
+    "@angular/core": "~9.0.6",
+    "@angular/forms": "~9.0.6",
+    "@angular/platform-browser": "~9.0.6",
+    "@angular/platform-browser-dynamic": "~9.0.6",
+    "@angular/router": "~9.0.6",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "path": "^0.12.7",
+    "prismjs": "^1.19.0",
+    "regenerator-runtime": "^0.13.5",
+    "remark-align": "^1.2.13",
+    "remark-iframes": "^4.0.4",
+    "remark-parse": "^7.0.2",
+    "remark-sub-super": "^1.0.19",
+    "rxjs": "~6.5.4",
+    "tslib": "^1.10.0",
+    "unified": "^8.4.2",
+    "whatwg-fetch": "^3.0.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.900.6",
+    "@angular/cli": "~9.0.6",
+    "@angular/compiler-cli": "~9.0.6",
+    "@angular/language-service": "~9.0.6",
+    "@types/node": "^12.11.1",
+    "@types/prismjs": "^1.16.0",
+    "ts-node": "~8.3.0",
+    "typescript": "~3.7.5"
+  }
+}

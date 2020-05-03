@@ -1,0 +1,56 @@
+<!-- Main Header -->
+<div class="text-center d-none d-lg-block" *ngIf="displayTitle()" [@fadeIn]>
+  <a class="title text-dark" [routerLink]="['/']">ALEX ZHAO</a>
+</div>
+
+<!-- Desktop Navbar -->
+<nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light d-none d-lg-block"
+  [ngClass]="{ 'navbar-shadow': isStuck() }">
+  <span #stickySentinel class="sticky-sentinel"></span>
+  <div class="container nav-container">
+    <a class="navbar-brand navbar-brand-desktop" *ngIf="isStuck()" [routerLink]="['/']" [@fadeInOut]>
+      ALEX ZHAO
+    </a>
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/projects']">PROJECTS</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/blog']">BLOG</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/resume']">RESUME</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Mobile Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg bg-white navbar-light d-lg-none navbar-shadow">
+  <div class="container nav-container">
+    <button class="navbar-toggler" id="toggler" type="button" data-toggle="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand navbar-brand-mobile mx-auto" [routerLink]="['/']">ALEX ZHAO</a>
+    <button class="navbar-toggler spacer" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class=" nav-link" [routerLink]="['/']" data-toggle="collapse" data-target="#navbar">HOME</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/projects']" data-toggle="collapse" data-target="#navbar">PROJECTS</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/blog']" data-toggle="collapse" data-target="#navbar">BLOG</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/resume']" data-toggle="collapse" data-target="#navbar">RESUME</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="mobile-spacer d-lg-none"></div>
