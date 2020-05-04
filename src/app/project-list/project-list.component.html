@@ -12,8 +12,8 @@
 
       <!-- Mobile dropdown -->
       <div class="dropdown mb-2 d-lg-none">
-        <button class="btn btn-lg dropdown-toggle border text-left" type="button" data-toggle="dropdown">Select a
-          Project...</button>
+        <button class="btn btn-lg dropdown-toggle border text-left" type="button" data-toggle="dropdown">
+          {{ project ? project.title : 'Select a Project...' }}</button>
         <div class="dropdown-menu">
           <a class="dropdown-item" *ngFor="let project of projects" routerLinkActive="active"
             [routerLink]="['/projects/' + project.id]">
