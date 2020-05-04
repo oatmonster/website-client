@@ -5,15 +5,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
-import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogResolverService } from './blog-detail/blog-resolver.service';
 import { ResumeComponent } from './resume/resume.component';
 
 export const appRoutes: Routes = [
   {
-    path: 'project/:id',
-    component: ProjectDetailComponent,
+    path: 'projects/:id',
+    component: ProjectListComponent,
   },
   {
     path: 'projects',

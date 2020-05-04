@@ -12,4 +12,8 @@ export class ProjectDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  range( n: number ) {
+    return Array( n );
+  }
+
 }

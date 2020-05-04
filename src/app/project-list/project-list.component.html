@@ -3,28 +3,13 @@
     <nav class="navbar navbar-light">
       <!-- Replace with dropdown when collapsed -->
       <ul class="nav navbar-nav flex-column">
-        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-          <a class="nav-link" [routerLink]="['/']">HOME</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/projects']">PROJECTS</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/blog']">BLOG</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/resume']">RESUME</a>
+        <li class="nav-item" routerLinkActive="active" *ngFor="let project of projects">
+          <a class="nav-link" [routerLink]="['/projects/' + project.id]">{{ project.title }}</a>
         </li>
       </ul>
     </nav>
   </div>
   <div class="col-lg">
-    <p *ngFor="let i of range(10)">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus euismod sem. In hac habitasse
-      platea dictumst.Curabitur vulputate eu ante nec varius. Proin quis scelerisque justo. Pellentesque dignissim
-      pharetra ligula, ut accumsan dui semper ut. Vivamus mauris nisl, rhoncus eget ligula eget, pretium dictum orci.
-      Nullam ante justo, condimentum ut bibendum ut, feugiat ut mi. Praesent eu nisi odio. Aenean et pulvinar massa.
-      Morbi in pharetra ligula. Suspendisse id metus mattis, tincidunt diam quis, dapibus purus.
-    </p>
+    <az-project-detail></az-project-detail>
   </div>
 </div>
