@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IBlogPost } from '../api.service';
+import { DateService } from '../date.service';
 
 @Component( {
   selector: 'az-blog-thumbnail',
@@ -11,30 +12,11 @@ export class BlogThumbnailComponent implements OnInit {
   @Input() post: IBlogPost;
   @Input() size: string;
 
-  months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December'
-  ]
-
-  constructor() { }
+  constructor( private dateService: DateService ) { }
 
   ngOnInit(): void { }
 
   date(): string {
-    let date = new Date( this.post.date );
-    let year = date.getFullYear();
-    let month = date.getMonth();
-    let day = date.getDate();
-    return `${this.months[ month ]} ${day}, ${year}`;
+    return this.dateService.formatDate( this.post.date );
   }
 }

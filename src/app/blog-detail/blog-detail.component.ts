@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { IBlogPost } from '../api.service';
+import { DateService } from '../date.service';
 
 @Component( {
   selector: 'az-blog-detail',
@@ -14,11 +15,16 @@ export class BlogDetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private dateService: DateService
   ) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe( ( data: { blog: IBlogPost } ) => {
       this.post = data.blog;
     } );
+  }
+
+  date(): string {
+    return this.dateService.formatDate( this.post.date );
   }
 }

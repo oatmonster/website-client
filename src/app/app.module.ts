@@ -23,6 +23,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogThumbnailComponent } from './blog-thumbnail/blog-thumbnail.component';
 import { ResumeComponent } from './resume/resume.component';
+import { DateService } from './date.service';
 
 @NgModule( {
   imports: [
@@ -50,9 +51,7 @@ import { ResumeComponent } from './resume/resume.component';
     ResumeComponent
   ],
   providers: [
-    Title,
-    ApiService,
-    BlogResolverService
+    Title
   ],
   bootstrap: [ AppComponent ]
 } )

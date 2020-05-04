@@ -1,4 +1,13 @@
-<div *ngIf="this.post; else notFound" [markdown]="post.content"></div>
+<div *ngIf="this.post; else notFound">
+  <img src="{{ post.thumbnailUrl }}" class="thumbnail">
+  <h1 class="title">{{ post.title }}</h1>
+  <h4 class="text-secondary">{{ post.subtitle }}</h4>
+  <hr>
+  <h4 class="text-secondary">{{ date() }}</h4>
+  <hr>
+  <div [markdown]="post.content"></div>
+
+</div>
 <ng-template #notFound>
   <az-not-found></az-not-found>
 </ng-template>
