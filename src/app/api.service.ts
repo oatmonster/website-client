@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
 
 import { environment } from '../environments/environment';
 
-@Injectable()
+@Injectable( {
+  providedIn: 'root'
+} )
 export class ApiService {
 
   private projects;
