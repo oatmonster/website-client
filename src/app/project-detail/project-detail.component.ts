@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { IProject } from '../api.service';
 
 @Component( {
   selector: 'az-project-detail',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [ './project-detail.component.scss' ]
 } )
 export class ProjectDetailComponent implements OnInit {
+
+  @Input()
+  project: IProject;
 
   constructor() { }
 

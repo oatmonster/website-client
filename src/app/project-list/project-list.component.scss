@@ -1,4 +1,22 @@
+// .nav-item {
+//   padding-left: 13px;
+// }
+
 // .nav-item.active {
 //   border-left: solid;
 //   border-left-width: 5px;
+//   padding-left: 8px;
 // }
+
+.dropdown-toggle {
+  width: 100%;
+}
+
+.dropdown-toggle::after {
+  float: right;
+  margin-top: 12px;
+}
+
+.dropdown-menu {
+  width: 100%;
+}

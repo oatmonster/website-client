@@ -6,13 +6,19 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
-import { BlogResolverService } from './blog-detail/blog-resolver.service';
 import { ResumeComponent } from './resume/resume.component';
+
+
+import { BlogResolverService } from './blog-detail/blog-resolver.service';
+import { ProjectResolverService } from './project-list/project-resolver.service';
 
 export const appRoutes: Routes = [
   {
     path: 'projects/:id',
     component: ProjectListComponent,
+    resolve: {
+      project: ProjectResolverService
+    }
   },
   {
     path: 'projects',

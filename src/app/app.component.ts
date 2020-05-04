@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
 
 import { environment } from '../environments/environment';
 
@@ -21,12 +21,19 @@ export class AppComponent {
     // Dynamic page title
     this.router.events.pipe(
       filter( e => e instanceof NavigationEnd ),
+      tap( ( e: NavigationEnd ) => {
+        console.log( e.url );
+      } ),
       map( () => {
         const child = this.activatedRoute.firstChild;
         if ( child.snapshot.data[ 'blog' ] === null ) {
           return 'Not Found';
+        } else if ( child.snapshot.data[ 'project' ] === null ) {
+          return 'Not Found';
         } else if ( child.snapshot.data[ 'blog' ] && child.snapshot.data[ 'blog' ][ 'title' ] ) {
           return child.snapshot.data[ 'blog' ][ 'title' ];
+        } else if ( child.snapshot.data[ 'project' ] && child.snapshot.data[ 'project' ][ 'title' ] ) {
+          return child.snapshot.data[ 'project' ][ 'title' ];
         }
         else if ( child.snapshot.data[ 'title' ] ) {
           return child.snapshot.data[ 'title' ];

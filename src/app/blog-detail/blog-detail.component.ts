@@ -17,9 +17,8 @@ export class BlogDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.data
-      .subscribe( ( data: { blog: IBlogPost } ) => {
-        this.post = data.blog;
-      } );
+    this.activatedRoute.data.subscribe( ( data: { blog: IBlogPost } ) => {
+      this.post = data.blog;
+    } );
   }
 }
