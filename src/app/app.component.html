@@ -6,18 +6,22 @@
 </div>
 <az-footer></az-footer>
 <div class="fixed-bottom">
-  <div class="alert alert-warning rounded-0 text-center" role="alert">
-    UNDER CONSTRUCTION - I'm still working on this website. Feel free to take a look around but most features aren't
-    finished yet!
-    <button type="button" class="close" data-dismiss="alert">
-      <span>&times;</span>
-    </button>
-  </div>
   <div class="alert alert-danger rounded-0 text-center" *ngIf="ie" role="alert">
     UNSUPPORTED BROWSER - Some of this website's features may not work on your browser. A modern browser like Firefox,
     Chrome, or Edge is recommended!
     <button type="button" class="close" data-dismiss="alert">
       <span>&times;</span>
     </button>
+  </div>
+  <div class="alert alert-warning row no-gutters mb-0 rounded-0 text-center" role="alert">
+    <div class="col">
+      UNDER CONSTRUCTION - I'm still working on this website. Feel free to take a look around but most features aren't
+      finished yet!
+    </div>
+    <div class="col col-auto">
+      <button type="button" class="close" data-dismiss="alert">
+        <span>&times;</span>
+      </button>
+    </div>
   </div>
 </div>

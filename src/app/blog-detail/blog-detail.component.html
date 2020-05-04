@@ -1,10 +1,12 @@
-<div *ngIf="this.post; else notFound">
+<div class="blog mx-auto" *ngIf="this.post; else notFound">
   <img src="{{ post.thumbnailUrl }}" class="thumbnail">
-  <h1 class="title">{{ post.title }}</h1>
-  <h4 class="text-secondary">{{ post.subtitle }}</h4>
-  <hr>
-  <h4 class="text-secondary">{{ date() }}</h4>
-  <hr>
+  <div>
+    <h1 class="title">{{ post.title }}</h1>
+    <h5 class="text-secondary">{{ post.subtitle }}</h5>
+    <hr>
+    <h6 class="text-secondary">{{ date() }}</h6>
+    <hr>
+  </div>
   <div [markdown]="post.content"></div>
 
 </div>
