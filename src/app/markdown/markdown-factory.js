@@ -1,7 +1,7 @@
 ( function ( global ) {
-	'use strict';
+	// 'use strict';
 
-	// Implements a basic process shim to support vfile/path modules to work in a browser
+	// Implements a basic process shim to support vfile / path modules to work in a browser
 	if ( !!global && !global.process ) {
 
 		global.process = {
