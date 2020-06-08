@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { IBlogPost } from '../api.service';
 import { DateService } from '../date.service';
+import { environment } from 'src/environments/environment';
 
 @Component( {
   selector: 'az-blog-thumbnail',
@@ -18,5 +20,9 @@ export class BlogThumbnailComponent implements OnInit {
 
   date(): string {
     return this.dateService.formatDate( this.post.date );
+  }
+
+  thumbnailUrl(): string {
+    return environment.imageUrl + this.post.id + '/thumbnail';
   }
 }
