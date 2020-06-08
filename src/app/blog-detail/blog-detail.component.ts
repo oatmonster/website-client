@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { IBlogPost } from '../api.service';
 import { DateService } from '../date.service';
+import { environment } from 'src/environments/environment';
 
 @Component( {
   selector: 'az-blog-detail',
@@ -22,6 +23,10 @@ export class BlogDetailComponent implements OnInit {
     this.activatedRoute.data.subscribe( ( data: { blog: IBlogPost } ) => {
       this.post = data.blog;
     } );
+  }
+
+  thumbnailUrl(): string {
+    return environment.imageUrl + this.post.id + '/thumbnail_1080w.jpg';
   }
 
   date(): string {
