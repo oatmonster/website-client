@@ -7,7 +7,7 @@
     <h6 class="text-secondary">{{ date() }}</h6>
     <hr>
   </div>
-  <markdown [id]="post.id" [markdown]="post.content"></markdown>
+  <markdown [id]="post.id" [type]="'blog'" [markdown]="post.content"></markdown>
 
 </div>
 <ng-template #notFound>
