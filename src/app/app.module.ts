@@ -1,4 +1,4 @@
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -7,9 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarkdownModule } from './markdown/markdown.module';
 
 import { appRoutes } from './routes';
-
-import { ApiService } from './api.service';
-import { BlogResolverService } from './blog-detail/blog-resolver.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,7 +20,6 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogThumbnailComponent } from './blog-thumbnail/blog-thumbnail.component';
 import { ResumeComponent } from './resume/resume.component';
-import { DateService } from './date.service';
 
 @NgModule( {
   imports: [
@@ -51,7 +47,8 @@ import { DateService } from './date.service';
     ResumeComponent
   ],
   providers: [
-    Title
+    Title,
+    Meta
   ],
   bootstrap: [ AppComponent ]
 } )
