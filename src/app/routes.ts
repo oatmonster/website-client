@@ -17,7 +17,7 @@ export const appRoutes: Routes = [
     path: 'projects/:id',
     component: ProjectListComponent,
     resolve: {
-      project: ProjectResolverService
+      content: ProjectResolverService
     }
   },
   {
@@ -29,7 +29,7 @@ export const appRoutes: Routes = [
     path: 'blog/:id',
     component: BlogDetailComponent,
     resolve: {
-      blog: BlogResolverService
+      content: BlogResolverService
     }
   },
   {

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { take, map, catchError } from 'rxjs/operators';
+import { take, catchError } from 'rxjs/operators';
 
 import { ApiService, IProject } from '../api.service';
 

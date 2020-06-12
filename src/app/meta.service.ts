@@ -23,14 +23,10 @@ export class MetaService {
       } ),
       map( () => {
         const child = this.activatedRoute.firstChild;
-        if ( child.snapshot.data[ 'blog' ] === null ) {
-          return 'Not Found';
-        } else if ( child.snapshot.data[ 'project' ] === null ) {
-          return 'Not Found';
-        } else if ( child.snapshot.data[ 'blog' ] && child.snapshot.data[ 'blog' ][ 'title' ] ) {
-          return child.snapshot.data[ 'blog' ][ 'title' ];
-        } else if ( child.snapshot.data[ 'project' ] && child.snapshot.data[ 'project' ][ 'title' ] ) {
-          return child.snapshot.data[ 'project' ][ 'title' ];
+        if ( child.snapshot.data[ 'content' ] === null ) {
+          return 'Page Not Found';
+        } else if ( child.snapshot.data[ 'content' ] && child.snapshot.data[ 'content' ][ 'title' ] ) {
+          return child.snapshot.data[ 'content' ][ 'title' ];
         }
         else if ( child.snapshot.data[ 'title' ] ) {
           return child.snapshot.data[ 'title' ];
