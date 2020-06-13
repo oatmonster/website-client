@@ -26,4 +26,8 @@ export class MarkdownInlineComponent {
   public imageUrl( image: number, width: 1080 ): string {
     return environment.imageUrl + this.tree.type + '/' + this.tree.id + '/' + image + '_' + width + 'w.jpg';
   }
+
+  public rootUrl(): string {
+    return environment.rootUrl;
+  }
 }

@@ -7,11 +7,13 @@ import { MarkdownInlineComponent } from './inline/inline.component';
 import { HighlightComponent } from './highlight/highlight.component'
 import { IFrameComponent } from './iframe.component';
 import { markdownFactory } from './markdown-factory';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule( {
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   declarations: [
     MarkdownRootComponent,
