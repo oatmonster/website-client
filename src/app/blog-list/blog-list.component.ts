@@ -12,11 +12,18 @@ export class BlogListComponent implements OnInit {
 
   public posts: IBlogPost[];
 
+  public pageCount: number;
+
+  public pageSize = 10;
+
   constructor( private apiService: ApiService ) { }
 
   ngOnInit(): void {
     this.apiService.getBlogPosts().subscribe( res => {
-      this.posts = res;
+      console.log( res );
+      this.posts = res.posts;
+      this.pageCount = Math.ceil( res.count / this.pageSize );
+      console.log( 'Posts:', res.count, 'Pages:', this.pageCount )
     } );
   }
 }

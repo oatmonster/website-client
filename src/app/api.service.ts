@@ -16,13 +16,13 @@ export class ApiService {
     this.loadDummyProjects();
   }
 
-  public getBlogPosts( query?: { page?: number, tags?: string[] } ): Observable<Array<IBlogPost>> {
+  public getBlogPosts( query?: { page?: number, tags?: string[] } ): Observable<{ posts: Array<IBlogPost>, count: number }> {
     let params = new HttpParams();
     if ( query ) {
       params = this.parseQuery( query );
     }
 
-    return this.httpClient.get<Array<IBlogPost>>( environment.apiUrl + 'blog', { params: params } ).pipe();
+    return this.httpClient.get<{ posts: Array<IBlogPost>, count: number }>( environment.apiUrl + 'blog', { params: params } ).pipe();
   }
 
   public getBlogPost( id: string ): Observable<IBlogPost> {
