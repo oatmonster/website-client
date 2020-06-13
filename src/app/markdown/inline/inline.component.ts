@@ -22,14 +22,7 @@ export class MarkdownInlineComponent {
   // Text rendering helper
   public _T( value: string ) { return value || ''; }
 
-  // Navigation helper functions
-  public navigate( url: string ): boolean {
-    // Relies on the root parent navigation mechanism 
-    this.root.navigate.emit( url );
-    // Prevents default navigation towards href
-    return false;
-  }
-
+  // Image URL from API
   public imageUrl( image: number, width: 1080 ): string {
     return environment.imageUrl + this.tree.type + '/' + this.tree.id + '/' + image + '_' + width + 'w.jpg';
   }

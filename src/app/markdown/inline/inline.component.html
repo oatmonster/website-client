@@ -30,11 +30,11 @@
     <br *ngSwitchCase="'break'" />
 
     <!-- Link -->
-    <a *ngSwitchCase="'link'" [href]="child.url" (click)="navigate(child.url)" [md-inline]="child"></a>
+    <a *ngSwitchCase="'link'" [href]="child.url" [md-inline]="child"></a>
 
     <!-- Link Reference -->
     <ng-container *ngSwitchCase="'linkReference'">
-      <a *ngIf="tree.definition(child) as def" [href]="def.url" (click)="navigate(def.url)" [md-inline]="child"></a>
+      <a *ngIf="tree.definition(child) as def" [href]="def.url" [md-inline]="child"></a>
     </ng-container>
 
     <!-- Image -->
