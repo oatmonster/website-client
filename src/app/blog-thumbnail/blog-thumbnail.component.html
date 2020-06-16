@@ -2,8 +2,8 @@
   <div [ngClass]="['col-' + size, 'order-' + size + '-last']">
     <div class="img-container">
       <a [routerLink]="['/blog/' + post.id]">
-        <img class="thumbnail" src="{{ thumbnailUrl() + '_1080w.jpg' }}" srcset="{{ thumbnailUrl() + '_540w.png' }} 540w,
-          {{ thumbnailUrl() + '_1080w.jpg' }} 1080w" alt="{{ post.title }}">
+        <img class="thumbnail" src="{{ thumbnailUrl() + '_1920w.jpg' }}" srcset="{{ thumbnailUrl() + '_960w.jpg' }} 960w,
+          {{ thumbnailUrl() + '_1920w.jpg' }} 1920w" alt="{{ post.title }}">
       </a>
     </div>
   </div>

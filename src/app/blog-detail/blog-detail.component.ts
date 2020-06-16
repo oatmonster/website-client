@@ -26,7 +26,7 @@ export class BlogDetailComponent implements OnInit {
   }
 
   thumbnailUrl(): string {
-    return environment.imageUrl + 'blog/' + this.post.id + '/thumbnail_1080w.jpg';
+    return environment.imageUrl + 'blog/' + this.post.id + '/thumbnail';
   }
 
   date(): string {
