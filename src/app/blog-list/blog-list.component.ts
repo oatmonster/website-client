@@ -40,7 +40,6 @@ export class BlogListComponent implements OnInit, OnDestroy {
         }
         this.posts = res.posts;
         this.pageCount = Math.ceil( res.count / this.pageSize );
-        this.pageCount = 10;
 
         // Set next and prev url based on page
         if ( this.page < this.pageCount && this.page >= 1 ) {
