@@ -23,6 +23,6 @@ export class BlogThumbnailComponent implements OnInit {
   }
 
   thumbnailUrl(): string {
-    return environment.imageUrl + 'blog/' + this.post.id + '/thumbnail';
+    return environment.imageUrl + '/blog/' + this.post.id + '/thumbnail';
   }
 }

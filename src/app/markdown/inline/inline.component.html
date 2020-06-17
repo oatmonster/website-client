@@ -31,7 +31,7 @@
 
     <!-- Link -->
     <ng-container *ngSwitchCase="'link'">
-      <a *ngIf="child.url.startsWith(rootUrl()); else href" [routerLink]="[child.url.slice(rootUrl().length-1)]"
+      <a *ngIf="child.url.startsWith(rootUrl()); else href" [routerLink]="[child.url.slice(rootUrl().length)]"
         [md-inline]="child"></a>
       <ng-template #href>
         <a *ngIf [href]="child.url" [md-inline]="child"></a>
@@ -41,7 +41,7 @@
     <!-- Link Reference -->
     <ng-container *ngSwitchCase="'linkReference'">
       <ng-container *ngIf="tree.definition(child) as def">
-        <a *ngIf="def.url.startsWith(rootUrl()); else href" [routerLink]="[def.url.slice(rootUrl().length-1)]"
+        <a *ngIf="def.url.startsWith(rootUrl()); else href" [routerLink]="[def.url.slice(rootUrl().length)]"
           [md-inline]="child"></a>
         <ng-template #href>
           <a *ngIf [href]="def.url" [md-inline]="child"></a>

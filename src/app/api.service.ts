@@ -22,11 +22,11 @@ export class ApiService {
       params = this.parseQuery( query );
     }
 
-    return this.httpClient.get<{ posts: Array<IBlogPost>, count: number }>( environment.apiUrl + 'blog', { params: params } ).pipe();
+    return this.httpClient.get<{ posts: Array<IBlogPost>, count: number }>( environment.apiUrl + '/blog', { params: params } ).pipe();
   }
 
   public getBlogPost( id: string ): Observable<IBlogPost> {
-    return this.httpClient.get<IBlogPost>( environment.apiUrl + 'blog/' + id ).pipe();
+    return this.httpClient.get<IBlogPost>( environment.apiUrl + '/blog/' + id ).pipe();
   }
 
   public getProjects( query?: { page?: number, tags?: string[] } ) {
@@ -34,12 +34,12 @@ export class ApiService {
     // if ( query ) {
     //   params = this.parseQuery( query );
     // }
-    // return this.httpClient.get<Array<IProject>>( environment.apiUrl + 'projects', { params: params } ).pipe();
+    // return this.httpClient.get<Array<IProject>>( environment.apiUrl + '/projects', { params: params } ).pipe();
     return of( this.projects );
   }
 
   public getProject( id: string ): Observable<IProject> {
-    // return this.httpClient.get<IProject>( environment.apiUrl + 'projects/' + id ).pipe();
+    // return this.httpClient.get<IProject>( environment.apiUrl + '/projects/' + id ).pipe();
     if ( this.projectMap.has( id ) ) {
       return of( this.projectMap.get( id ) );
     } else {
