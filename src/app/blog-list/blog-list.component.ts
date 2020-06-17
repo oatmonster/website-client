@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { ApiService } from '../api.service';
 import { IBlogPost } from '../api.service';
+import { MetaService } from '../meta.service';
 
 @Component( {
   selector: 'az-blog-list',
@@ -22,7 +23,10 @@ export class BlogListComponent implements OnInit, OnDestroy {
 
   public pageSize = 10;
 
-  constructor( private apiService: ApiService, private activatedRoute: ActivatedRoute ) { }
+  constructor(
+    private apiService: ApiService,
+    private activatedRoute: ActivatedRoute,
+    private metaService: MetaService ) { }
 
   private queryParamSubscription: Subscription;
 
@@ -30,9 +34,22 @@ export class BlogListComponent implements OnInit, OnDestroy {
     this.queryParamSubscription = this.activatedRoute.queryParams.subscribe( params => {
       this.page = Math.max( 1, parseInt( params[ 'page' ], 10 ) || 1 );
       this.apiService.getBlogPosts( { page: this.page } ).subscribe( res => {
+        // Set canonical URL for first page
+        if ( this.page === 1 ) {
+          this.metaService.setCanonicalUrl( '/blog' );
+        }
         this.posts = res.posts;
         this.pageCount = Math.ceil( res.count / this.pageSize );
         this.pageCount = 10;
+
+        // Set next and prev url based on page
+        if ( this.page < this.pageCount && this.page >= 1 ) {
+          this.metaService.setNextURL( '/blog?page=' + ( this.page + 1 ) );
+        }
+        if ( this.page > 1 && this.page <= this.pageCount ) {
+          this.metaService.setPrevUrl( '/blog?page=' + ( this.page - 1 ) );
+        }
+
         this.updatePages();
       } );
     } );
