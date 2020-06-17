@@ -7,23 +7,24 @@
 
 <ul *ngIf="!!posts" class="pagination justify-content-center">
   <li class="page-item" [ngClass]="{ 'disabled': page <= 1 }">
-    <a class="page-link" [routerLink]="['/blog']" [queryParams]="{ page: page-1 }">
+    <a class="page-link" rel="prev" [routerLink]="['/blog']" [queryParams]="{ page: page-1 }">
       PREV
     </a>
   </li>
   <li class="divider">
     |
   </li>
-  <ng-container *ngFor="let pageLink of pages">
+  <ng-container *ngFor="let pageLink of pageList">
     <li class="page-item" [ngClass]="{ 'active disabled': page === pageLink }">
-      <a class="page-link" [routerLink]="['/blog']" [queryParams]="{ page: pageLink }">{{ pageLink }}</a>
+      <a class="page-link" [attr.rel]="page === pageLink-1 ? 'next' : page === pageLink+1 ? 'prev' : null"
+        [routerLink]="['/blog']" [queryParams]="{ page: pageLink }">{{ pageLink }}</a>
     </li>
     <li class="divider">
       |
     </li>
   </ng-container>
   <li class="page-item" [ngClass]="{ 'disabled': page >= pageCount }">
-    <a class=" page-link" [routerLink]="['/blog']" [queryParams]="{ page: page+1 }">
+    <a class=" page-link" rel="next" [routerLink]="['/blog']" [queryParams]="{ page: page+1 }">
       <span>NEXT</span>
     </a>
   </li>
