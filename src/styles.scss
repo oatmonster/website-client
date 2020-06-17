@@ -1,10 +1,13 @@
+@use "sass:map";
 @import "../node_modules/prismjs/themes/prism.css";
 
-$theme-colors: (
-  "dark": #222222
-);
+$dark: #222222;
 
-// $component-active-bg: red;
+$pagination-border-width: 0;
+$pagination-active-bg: transparent;
+$pagination-hover-bg: transparent;
+$pagination-color: $dark;
+$pagination-hover-color: lighten($dark, 15%);
 
 $font-family-sans-serif: 'Montserrat', sans-serif;
 $font-family-monospace: 'Source Code Pro', monospace;
@@ -69,4 +72,29 @@ blockquote {
   margin: 16px 24px;
   padding: 0 1em;
   border-left: 3px solid #ccc;
+}
+
+.pagination {
+
+  font-weight: 500;
+
+  .divider {
+    position: relative;
+    display: block;
+    padding-top: $pagination-padding-y;
+    padding-bottom: $pagination-padding-y;
+    line-height: $pagination-line-height;
+    color: map.get($grays, "500");
+    background-color: $pagination-bg;
+  } 
+}
+
+.page-item {
+  &.disabled .page-link {
+    color: map.get($grays, "500");
+  }
+
+  &.active .page-link {
+    color: map.get($grays, "500");
+  }
 }
