@@ -16,7 +16,7 @@ export class MetaService {
 
   constructor(
     private titleService: Title,
-    private meta: Meta,
+    private metaService: Meta,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     @Inject( DOCUMENT ) private document: Document
@@ -40,7 +40,8 @@ export class MetaService {
         console.log( e.url );
         // Set canonical url to default value on navigation
         // (can be changed to a different value using setCanonicalUrl)
-        this.canonicalUrl.setAttribute( 'href', environment.rootUrl + e.url )
+        this.canonicalUrl.setAttribute( 'href', environment.rootUrl + e.url );
+
         this.nextURL.remove();
         this.prevURL.remove();
       } ),
