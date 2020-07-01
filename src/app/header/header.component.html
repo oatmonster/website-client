@@ -13,13 +13,13 @@
     </a>
     <ul class="navbar-nav mx-auto">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/projects']">PROJECTS</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/blog']">BLOG</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/resume']">RESUME</a>
+        <a class="nav-link" [routerLink]="['/projects']">PROJECTS</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/about']">ABOUT</a>
       </li>
     </ul>
   </div>
@@ -28,7 +28,7 @@
 <!-- Mobile Navbar -->
 <nav class="navbar fixed-top navbar-expand-lg bg-white navbar-light d-lg-none navbar-shadow">
   <div class="container nav-container">
-    <button class="navbar-toggler" id="toggler" type="button" data-toggle="collapse" data-target="#navbar">
+    <button class="navbar-toggler" id="toggler" type="button" data-toggle="collapse" data-target="#mobile-navbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand navbar-brand-mobile mx-auto" [routerLink]="['/']">ALEX ZHAO</a>
@@ -36,19 +36,20 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
-  <div class="collapse navbar-collapse" id="navbar">
+  <div class="collapse navbar-collapse" id="mobile-navbar">
     <ul class="navbar-nav mx-auto">
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <a class=" nav-link" [routerLink]="['/']" data-toggle="collapse" data-target="#navbar">HOME</a>
+        <a class=" nav-link" [routerLink]="['/']" data-toggle="collapse" data-target="#mobile-navbar">HOME</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/projects']" data-toggle="collapse" data-target="#navbar">PROJECTS</a>
+        <a class="nav-link" [routerLink]="['/blog']" data-toggle="collapse" data-target="#mobile-navbar">BLOG</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/blog']" data-toggle="collapse" data-target="#navbar">BLOG</a>
+        <a class="nav-link" [routerLink]="['/projects']" data-toggle="collapse"
+          data-target="#mobile-navbar">PROJECTS</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/resume']" data-toggle="collapse" data-target="#navbar">RESUME</a>
+        <a class="nav-link" [routerLink]="['/about']" data-toggle="collapse" data-target="#mobile-navbar">ABOUT</a>
       </li>
     </ul>
   </div>

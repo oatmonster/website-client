@@ -13,13 +13,12 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ContactComponent } from './contact/contact.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogThumbnailComponent } from './blog-thumbnail/blog-thumbnail.component';
-import { ResumeComponent } from './resume/resume.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule( {
   imports: [
@@ -38,13 +37,12 @@ import { ResumeComponent } from './resume/resume.component';
     FooterComponent,
     HomeComponent,
     NotFoundComponent,
-    ContactComponent,
     ProjectListComponent,
     ProjectDetailComponent,
     BlogListComponent,
     BlogDetailComponent,
     BlogThumbnailComponent,
-    ResumeComponent
+    AboutComponent
   ],
   providers: [
     Title,

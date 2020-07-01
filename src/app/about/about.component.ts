@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component( {
-  selector: 'az-resume',
-  templateUrl: './resume.component.html',
-  styleUrls: [ './resume.component.scss' ]
+  selector: 'az-about',
+  templateUrl: './about.component.html',
+  styleUrls: [ './about.component.scss' ]
 } )
-export class ResumeComponent implements OnInit {
+export class AboutComponent implements OnInit {
 
 
   public skills: string[] = [

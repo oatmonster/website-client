@@ -2,11 +2,10 @@ import { Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ContactComponent } from './contact/contact.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
-import { ResumeComponent } from './resume/resume.component';
+import { AboutComponent } from './about/about.component';
 
 
 import { BlogResolverService } from './blog-detail/blog-resolver.service';
@@ -38,14 +37,9 @@ export const appRoutes: Routes = [
     data: { title: 'Blog' }
   },
   {
-    path: 'contact',
-    component: ContactComponent,
-    data: { title: 'Contact' }
-  },
-  {
-    path: 'resume',
-    component: ResumeComponent,
-    data: { title: 'Resume' }
+    path: 'about',
+    component: AboutComponent,
+    data: { title: 'About' }
   },
   {
     path: '',
