@@ -1,12 +1,10 @@
 import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AppRoutingModule } from './app-routing.module';
 import { MarkdownModule } from './markdown/markdown.module';
-
-import { appRoutes } from './routes';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -25,11 +23,8 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule.forRoot( appRoutes, {
-      onSameUrlNavigation: 'reload',
-      scrollPositionRestoration: 'enabled'
-    } ),
-    MarkdownModule
+    MarkdownModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,

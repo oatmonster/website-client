@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -7,11 +8,10 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { AboutComponent } from './about/about.component';
 
-
 import { BlogResolverService } from './blog-detail/blog-resolver.service';
 import { ProjectResolverService } from './project-list/project-resolver.service';
 
-export const appRoutes: Routes = [
+const appRoutes: Routes = [
   {
     path: 'projects/:id',
     component: ProjectListComponent,
@@ -50,4 +50,17 @@ export const appRoutes: Routes = [
     component: NotFoundComponent,
     data: { title: 'Not Found' }
   }
-]
+];
+
+@NgModule( {
+  imports: [
+    RouterModule.forRoot( appRoutes, {
+      onSameUrlNavigation: 'reload',
+      scrollPositionRestoration: 'enabled'
+    } ),
+  ],
+  exports: [
+    RouterModule
+  ]
+} )
+export class AppRoutingModule { }
