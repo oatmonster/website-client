@@ -23,9 +23,8 @@ export class MarkdownInlineComponent {
   public _T( value: string ) { return value || ''; }
 
   // Image URL from API
-  public imageUrl( image: string, width: 1080 ): string {
-    let info = image.split( '.' );
-    return environment.imageUrl + '/' + this.tree.type + '/' + this.tree.id + '/' + info[ 0 ] + '_' + width + 'w.' + info[ 1 ];
+  public imageUrl( url: string ): string {
+    return environment.imageUrl + '/' + this.tree.type + '/' + this.tree.id + '/' + url;
   }
 
   public rootUrl(): string {
