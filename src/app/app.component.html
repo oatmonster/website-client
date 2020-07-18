@@ -13,7 +13,7 @@
       <span>&times;</span>
     </button>
   </div>
-  <div class="alert alert-warning row no-gutters mb-0 rounded-0 text-center" role="alert">
+  <div *ngIf="underConstruction()" class="alert alert-warning row no-gutters mb-0 rounded-0 text-center" role="alert">
     <div class="col">
       UNDER CONSTRUCTION - I'm still working on this website. Feel free to take a look around but most features aren't
       finished yet!

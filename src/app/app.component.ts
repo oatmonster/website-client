@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { environment } from '../environments/environment';
 import { MetaService } from './meta.service';
@@ -13,7 +14,13 @@ export class AppComponent {
   public ie: boolean = false;
   public production: boolean = environment.production;
 
-  constructor( private metaService: MetaService ) { }
+  constructor( private router: Router, private metaService: MetaService ) { }
+
+  // Method to check if current route is under construction
+  // Blog is more or less complete
+  public underConstruction(): boolean {
+    return !this.router.url.startsWith( '/blog' );
+  }
 
   ngOnInit() {
     // Check for Internet Explorer
