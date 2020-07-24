@@ -1,6 +1,18 @@
+@use 'breakpoints';
+
 .blog-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
+  grid-template-columns: 1fr;
+
+  @include breakpoints.tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoints.desktop {
+    grid-template-columns: 1fr;
+  }
+
+  grid-column-gap: 1em;
 }
 
 .not-found {

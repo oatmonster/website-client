@@ -30,6 +30,11 @@
               "src/styles/styles.scss",
               "node_modules/prismjs/themes/prism.css"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

@@ -1,0 +1,14 @@
+@use 'sass:map';
+@use 'variables';
+
+@mixin desktop {
+ @media (min-width: map.get(variables.$breakpoints, desktop)) {
+   @content;
+ }
+}
+
+@mixin tablet {
+  @media (min-width: map.get(variables.$breakpoints, tablet)) {
+    @content;
+  }
+ }
