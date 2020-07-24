@@ -1,9 +1,6 @@
-.thumbnail {
-  width: 100%;
-}
-
-.subtitle {
-  font-size: 18px;
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
 }
 
 .not-found {

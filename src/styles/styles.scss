@@ -1,0 +1,100 @@
+@use 'variables' as *;
+// @use "sass:map";
+// @import "../node_modules/prismjs/themes/prism.css";
+
+body {
+  font-family: $font-family-sans-serif;
+}
+
+$dark: #222222;
+
+// $pagination-border-width: 0;
+// $pagination-active-bg: transparent;
+// $pagination-hover-bg: transparent;
+// $pagination-color: $dark;
+// $pagination-hover-color: lighten($dark, 15%);
+
+
+$border-radius: 0px;
+$border-radius-lg: 0px;
+$border-radius-sm: 0px;
+
+// @import "../node_modules/bootstrap/scss/bootstrap";
+
+// Responsive borders
+// @each $breakpoint in map-keys($grid-breakpoints) {
+//   @include media-breakpoint-up($breakpoint) {
+//     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+//     .border#{$infix}-top {      border-top: $border-width solid $border-color !important; }
+//     .border#{$infix}-right {    border-right: $border-width solid $border-color !important; }
+//     .border#{$infix}-bottom {   border-bottom: $border-width solid $border-color !important; }
+//     .border#{$infix}-left {     border-left: $border-width solid $border-color !important; }
+
+//     .border#{$infix}-top-0 {    border-top: 0 !important; }
+//     .border#{$infix}-right-0 {  border-right: 0 !important; }
+//     .border#{$infix}-bottom-0 { border-bottom: 0 !important; }
+//     .border#{$infix}-left-0 {   border-left: 0 !important; }
+//     .border#{$infix}-0 {        border: 0 !important; }
+
+//     .border#{$infix}-x {
+//       border-left: $border-width solid $border-color !important;
+//       border-right: $border-width solid $border-color !important;
+//     }
+
+//     .border#{$infix}-y {
+//       border-top: $border-width solid $border-color !important;
+//       border-bottom: $border-width solid $border-color !important;
+//     }
+//   }
+// }
+
+h1 { font-size: 1.75rem; }
+
+// @include media-breakpoint-up(lg) {
+//   h1 { font-size: 2.5rem; }
+// }
+
+a {
+  text-decoration: none !important;
+}
+
+a.text-dark:hover {
+  color: lighten($dark, 15%) !important;
+}
+
+code, pre {
+  font-family: $font-family-monospace !important;
+  font-size: inherit !important;
+}
+
+blockquote {
+  margin: 16px 24px;
+  padding: 0 1em;
+  border-left: 3px solid #ccc;
+}
+
+// .pagination {
+
+//   font-weight: 500;
+
+//   .divider {
+//     position: relative;
+//     display: block;
+//     padding-top: $pagination-padding-y;
+//     padding-bottom: $pagination-padding-y;
+//     line-height: $pagination-line-height;
+//     color: map.get($grays, "500");
+//     background-color: $pagination-bg;
+//   } 
+// }
+
+// .page-item {
+//   &.disabled .page-link {
+//     color: map.get($grays, "500");
+//   }
+
+//   &.active .page-link {
+//     color: map.get($grays, "500");
+//   }
+// }
