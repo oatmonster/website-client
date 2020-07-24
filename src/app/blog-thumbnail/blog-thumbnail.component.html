@@ -1,17 +1,13 @@
-<div class="row" *ngIf="size">
-  <div [ngClass]="['col-' + size, 'order-' + size + '-last']">
-    <div class="img-container">
-      <a [routerLink]="['/blog/' + post.id]">
-        <img class="thumbnail" src="{{ thumbnailUrl() + '_1920w.jpg' }}" srcset="{{ thumbnailUrl() + '_960w.jpg' }} 960w,
+<div class="img-container">
+  <a [routerLink]="['/blog/' + post.id]">
+    <img class="thumbnail" src="{{ thumbnailUrl() + '_1920w.jpg' }}" srcset="{{ thumbnailUrl() + '_960w.jpg' }} 960w,
           {{ thumbnailUrl() + '_1920w.jpg' }} 1920w" alt="{{ post.title }}">
-      </a>
-    </div>
-  </div>
-  <div class="info" [ngClass]="['col-' + size + '-4', 'order-' + size + '-first']">
-    <h1 class="mt-1">
-      <a class="text-dark" [routerLink]="['/blog/' + post.id]">{{ post.title }}</a>
-    </h1>
-    <p class="text-muted subtitle">{{ post.subtitle }}</p>
-    <p *ngIf="post.date" class="text-muted">{{ date() }}</p>
-  </div>
+  </a>
+</div>
+<div class="info">
+  <h1 class="mt-1">
+    <a class="text-dark" [routerLink]="['/blog/' + post.id]">{{ post.title }}</a>
+  </h1>
+  <p class="text-muted subtitle">{{ post.subtitle }}</p>
+  <p *ngIf="post.date" class="text-muted">{{ date() }}</p>
 </div>

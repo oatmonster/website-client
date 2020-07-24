@@ -10,3 +10,12 @@ $font-family-monospace: 'Source Code Pro', monospace;
 
 // Colors
 
+$colors: (
+  muted: #adb5bd
+);
+
+:root {
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
+  }
+}

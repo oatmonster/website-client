@@ -12,7 +12,6 @@ import { environment } from 'src/environments/environment';
 export class BlogThumbnailComponent implements OnInit {
 
   @Input() post: IBlogPost;
-  @Input() size: string;
 
   constructor( private dateService: DateService ) { }
 

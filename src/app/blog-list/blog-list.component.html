@@ -1,8 +1,6 @@
 <div class=blog-list>
-  <div *ngFor="let post of posts; let i = index"
-    [ngClass]="{ 'border-xl-top': i > 0, 'border-md-0': i > 0, 'border-top': i > 0 }">
-    <az-blog-thumbnail [post]="post" [size]="'xl'"></az-blog-thumbnail>
-  </div>
+  <az-blog-thumbnail *ngFor="let post of posts; let i = index" class="blog-post" [ngClass]="{ 'first': i === 0 }"
+    [post]="post"></az-blog-thumbnail>
 </div>
 
 <!-- No Results -->

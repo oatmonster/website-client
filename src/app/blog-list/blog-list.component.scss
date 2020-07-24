@@ -11,8 +11,22 @@
   @include breakpoints.desktop {
     grid-template-columns: 1fr;
   }
+}
 
-  grid-column-gap: 1em;
+.blog-post {
+  padding: .5em;
+}
+
+.blog-post:not(.first) {
+  border-top: 1px solid var(--muted);
+
+  @include breakpoints.tablet {
+    border-top: 0;
+  }
+
+  @include breakpoints.desktop {
+    border-top: 1px solid var(--muted);
+  }
 }
 
 .not-found {
