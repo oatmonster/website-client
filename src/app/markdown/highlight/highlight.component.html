@@ -1,2 +1,4 @@
+<pre [ngClass]="'language-'+_language">
 <code [ngClass]="'language-'+_language" *ngIf="_grammar && _source; else otherLang" [innerHTML]="highlight()"></code>
+</pre>
 <ng-template #otherLang><code [ngClass]="'language-none'">{{ _source }}</code></ng-template>

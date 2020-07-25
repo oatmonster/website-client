@@ -1,14 +1,22 @@
 @use 'sass:map';
 @use 'variables' as *;
 
-// @import "../node_modules/prismjs/themes/prism.css";
-
-body {
-  font-family: $font-family-sans-serif;
+* {
   box-sizing: border-box;
+  font-family: $font-family-sans-serif;
 }
 
-$dark: #222222;
+code {
+  font-family: $font-family-monospace !important;
+  font-size: inherit !important;
+  color: #e83e8c;
+}
+
+blockquote {
+  margin: 16px 24px;
+  padding: 0 1em;
+  border-left: 3px solid #ccc;
+}
 
 // $pagination-border-width: 0;
 // $pagination-active-bg: transparent;
@@ -51,30 +59,19 @@ $dark: #222222;
 //   }
 // }
 
-h1 { font-size: 1.75rem; }
+// h1 { font-size: 1.75rem; }
 
 // @include media-breakpoint-up(lg) {
 //   h1 { font-size: 2.5rem; }
 // }
 
-a {
-  text-decoration: none !important;
-}
+// a {
+//   text-decoration: none !important;
+// }
 
-a.text-dark:hover {
-  color: lighten($dark, 15%) !important;
-}
-
-code, pre {
-  font-family: $font-family-monospace !important;
-  font-size: inherit !important;
-}
-
-blockquote {
-  margin: 16px 24px;
-  padding: 0 1em;
-  border-left: 3px solid #ccc;
-}
+// a.text-dark:hover {
+//   color: lighten($dark, 15%) !important;
+// }
 
 // .pagination {
 

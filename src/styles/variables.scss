@@ -11,7 +11,10 @@ $font-family-monospace: 'Source Code Pro', monospace;
 // Colors
 
 $colors: (
-  muted: #adb5bd
+  primary: #222222,
+  secondary: #f5f5f5,
+  on-primary: #808080,
+  muted: #adb9bd
 );
 
 :root {

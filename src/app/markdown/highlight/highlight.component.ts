@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding, AfterViewChecked } from '@angular/core';
+import { Component, Input, HostBinding, ViewEncapsulation } from '@angular/core';
 
 import * as Prism from 'prismjs';
 import 'prismjs/components/prism-c';
@@ -7,8 +7,10 @@ import 'prismjs/components/prism-applescript';
 import 'prismjs/components/prism-typescript';
 
 @Component( {
-  selector: 'pre[source]',
-  templateUrl: './highlight.component.html'
+  selector: 'md-highlight',
+  templateUrl: './highlight.component.html',
+  styleUrls: [ './highlight.component.scss' ],
+  encapsulation: ViewEncapsulation.ShadowDom
 } )
 export class HighlightComponent {
 

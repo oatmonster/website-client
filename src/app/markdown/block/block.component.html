@@ -51,12 +51,11 @@
     <span *ngSwitchCase="'rightAligned'" md-align="right" style="float: right" [md-block]="child"></span>
 
     <!-- Code Block w/ syntax highlighting by Prism -->
-    <pre *ngSwitchCase="'code'" [language]="child.lang" [source]="child.value"></pre>
+    <md-highlight *ngSwitchCase="'code'" [source]="child.value" [language]="child.lang"></md-highlight>
 
     <!-- Embedded video -->
-    <ng-container *ngSwitchCase="'iframe'">
-      <md-iframe [src]="child.data.hProperties.src"></md-iframe>
-    </ng-container>
+    <md-iframe *ngSwitchCase="'iframe'" [src]="child.data.hProperties.src"></md-iframe>
+
 
   </ng-container>
 

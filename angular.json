@@ -27,8 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/styles.scss",
-              "node_modules/prismjs/themes/prism.css"
+              "src/styles/styles.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
