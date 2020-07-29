@@ -1,63 +1,134 @@
+@use 'sass:map';
+@use 'variables' as *;
+@use 'mixins';
+@use 'breakpoints';
+
 .title {
   font-size: 4em;
   font-weight: 300;
-  margin: 10px;
-}
-
-.nav-link {
-  font-size: 1.5em;
-  font-weight: 300;
+  padding: 10px;
   text-align: center;
-}
 
-.navbar-brand-desktop {
-  position: absolute;
-  font-weight: 500;
-  font-size: 1.75em;
+  a {
+    color: map-get($colors, 'on-background');
+
+    &:hover {
+      color: lighten(map-get($colors, 'on-background'), 25%);
+    }
+  }
+
+  display: none;
+
+  @include breakpoints.desktop {
+    display: block;
+  }
 }
 
 .navbar {
-  padding-left: 0;
-  padding-right: 0;
-  border-width: 1.5px;
-  margin-bottom: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  background: var(--background);
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 52px;
+
+  @include mixins.container;
+}
+
+.navbar-logo, .navbar-social-links {
+  width: 180px;
+}
+
+.navbar-logo {
+  font-weight: 500;
+  font-size: 1.75em;
+  
+  a {
+    color: map-get($colors, 'on-background');
+
+    &:hover {
+      color: lighten(map-get($colors, 'on-background'), 25%);
+    }
+  }
+}
+
+.navbar-links {
+  list-style-type: none;
+  height: 40px;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 0;
+}
+
+.navbar-link {
+  float: left;
+  font-size: 1.5em;
+  font-weight: 300;
+
+  padding: 5px;
+
+  a {
+    color: map-get($colors, 'inactive');
+
+    &:hover {
+      color: darken(map-get($colors, 'inactive'), 25%);
+    }
+
+    &.active {
+      color: map-get($colors, 'on-background');
+    }
+  }
 }
 
 .navbar-shadow {
   box-shadow: 0 2px 2px rgba(0,0,0,.1);
 }
 
-.navbar-brand-mobile {
-  font-size: 1.75em;
-  font-weight: 500;
-  margin: 0;
-}
-
-.nav-container {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.navbar-toggler {
-  padding: 0;
-  border-radius: 0;
-  border: none;
-  cursor: pointer;
-}
-
-.spacer {
-  visibility: hidden;
-}
-
-.mobile-spacer {
-  height: 68px;
-  margin-bottom: 16px;
-}
-
-span.sticky-sentinel {
+.sticky-sentinel {
   position: absolute;
   height: 0px;
 	left: 0px;
   width: 0px;
   top: -5px;
 }
+
+// .navbar {
+//   padding-left: 0;
+//   padding-right: 0;
+//   border-width: 1.5px;
+//   margin-bottom: 1em;
+// }
+
+// .navbar-brand-mobile {
+//   font-size: 1.75em;
+//   font-weight: 500;
+//   margin: 0;
+// }
+
+// .navbar-toggler {
+//   padding: 0;
+//   border-radius: 0;
+//   border: none;
+//   cursor: pointer;
+// }
+
+// .spacer {
+//   visibility: hidden;
+// }
+
+// .mobile-spacer {
+//   height: 68px;
+//   margin-bottom: 16px;
+// }

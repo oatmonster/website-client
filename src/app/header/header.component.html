@@ -1,32 +1,32 @@
 <!-- Main Header -->
-<div class="text-center d-none d-lg-block" *ngIf="displayTitle()" [@fadeIn]>
-  <a class="title text-dark" [routerLink]="['/']">ALEX ZHAO</a>
+<div class="title" *ngIf="displayTitle()" [@fadeIn]>
+  <a [routerLink]="['/']">ALEX ZHAO</a>
 </div>
 
 <!-- Desktop Navbar -->
-<nav class="navbar sticky-top navbar-expand-lg bg-white navbar-light d-none d-lg-block"
-  [ngClass]="{ 'navbar-shadow': isStuck() }">
-  <span #stickySentinel class="sticky-sentinel"></span>
-  <div class="container nav-container">
-    <a class="navbar-brand navbar-brand-desktop" *ngIf="isStuck()" [routerLink]="['/']" [@fadeInOut]>
-      ALEX ZHAO
-    </a>
-    <ul class="navbar-nav mx-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/blog']">BLOG</a>
+<nav class="navbar" [ngClass]="{ 'navbar-shadow': isStuck() }">
+  <div class="navbar-container">
+    <span #stickySentinel class="sticky-sentinel"></span>
+    <span class="navbar-logo">
+      <a *ngIf="isStuck()" [routerLink]="['/']" [@fadeInOut]>ALEX ZHAO</a>
+    </span>
+    <ul class="navbar-links">
+      <li class="navbar-link">
+        <a [routerLink]="['/blog']" routerLinkActive="active">BLOG</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/projects']">PROJECTS</a>
+      <li class="navbar-link">
+        <a [routerLink]="['/projects']" routerLinkActive="active">PROJECTS</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/about']">ABOUT</a>
+      <li class="navbar-link">
+        <a [routerLink]="['/about']" routerLinkActive="active">ABOUT</a>
       </li>
     </ul>
+    <a class="navbar-social-links"></a>
   </div>
 </nav>
 
 <!-- Mobile Navbar -->
-<nav class="navbar fixed-top navbar-expand-lg bg-white navbar-light d-lg-none navbar-shadow">
+<!-- <nav class="navbar fixed-top navbar-expand-lg bg-white navbar-light d-lg-none navbar-shadow">
   <div class="container nav-container">
     <button class="navbar-toggler" id="toggler" type="button" data-toggle="collapse" data-target="#mobile-navbar">
       <span class="navbar-toggler-icon"></span>
@@ -54,4 +54,4 @@
     </ul>
   </div>
 </nav>
-<div class="mobile-spacer d-lg-none"></div>
+<div class="mobile-spacer d-lg-none"></div> -->
