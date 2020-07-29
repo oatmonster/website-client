@@ -11,13 +11,13 @@ $font-family-monospace: 'Source Code Pro', monospace;
 // Colors
 $colors: (
   primary: #222222,
-  secondary: #f5f5f5,
+  secondary: #f5f5f5, // Code background color
   background: #ffffff,
-  on-primary: #808080,
+  on-primary: #f5f5f5,
   on-secondary: #222222,
   on-background: #222222,
   muted: #adb9bd,
-  inactive:#808080,
+  inactive:#808080, // Also the wireframe color
 );
 
 :root {
