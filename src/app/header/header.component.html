@@ -3,55 +3,31 @@
   <a [routerLink]="['/']">ALEX ZHAO</a>
 </div>
 
-<!-- Desktop Navbar -->
+<!-- Navbar -->
 <nav class="navbar" [ngClass]="{ 'navbar-shadow': isStuck() }">
   <div class="navbar-container">
     <span #stickySentinel class="sticky-sentinel"></span>
-    <span class="navbar-logo">
-      <a *ngIf="isStuck()" [routerLink]="['/']" [@fadeInOut]>ALEX ZHAO</a>
+    <span class="navbar-left">
+      <button class="navbar-toggler" type="button" (click)="toggleCollapsed()"></button>
+      <a class="navbar-logo" *ngIf="isStuck()" [routerLink]="['/']" [@fadeInOut]>ALEX ZHAO</a>
     </span>
-    <ul class="navbar-links">
-      <li class="navbar-link">
-        <a [routerLink]="['/blog']" routerLinkActive="active">BLOG</a>
+    <span class="navbar-mobile-logo">ALEX ZHAO</span>
+    <ul class="navbar-links" [@collapse]="collapsed ? 'collapsed' : 'expanded'">
+      <li class="navbar-link navbar-home-link">
+        <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+          (click)="collapse()">HOME</a>
+      </li>
+      <li class="navbar-link ">
+        <a [routerLink]="['/blog']" routerLinkActive="active" (click)="collapse()">BLOG</a>
       </li>
       <li class="navbar-link">
-        <a [routerLink]="['/projects']" routerLinkActive="active">PROJECTS</a>
+        <a [routerLink]="['/projects']" routerLinkActive="active" (click)="collapse()">PROJECTS</a>
       </li>
       <li class="navbar-link">
-        <a [routerLink]="['/about']" routerLinkActive="active">ABOUT</a>
+        <a [routerLink]="['/about']" routerLinkActive="active" (click)="collapse()">ABOUT</a>
       </li>
     </ul>
-    <a class="navbar-social-links"></a>
+    <span class="navbar-right"></span>
   </div>
 </nav>
-
-<!-- Mobile Navbar -->
-<!-- <nav class="navbar fixed-top navbar-expand-lg bg-white navbar-light d-lg-none navbar-shadow">
-  <div class="container nav-container">
-    <button class="navbar-toggler" id="toggler" type="button" data-toggle="collapse" data-target="#mobile-navbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand navbar-brand-mobile mx-auto">ALEX ZHAO</a>
-    <button class="navbar-toggler spacer" type="button">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-  <div class="collapse navbar-collapse" id="mobile-navbar">
-    <ul class="navbar-nav mx-auto">
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <a class=" nav-link" [routerLink]="['/']" data-toggle="collapse" data-target="#mobile-navbar">HOME</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/blog']" data-toggle="collapse" data-target="#mobile-navbar">BLOG</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/projects']" data-toggle="collapse"
-          data-target="#mobile-navbar">PROJECTS</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/about']" data-toggle="collapse" data-target="#mobile-navbar">ABOUT</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div class="mobile-spacer d-lg-none"></div> -->
+<div class="mobile-spacer"></div>

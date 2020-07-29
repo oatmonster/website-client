@@ -2,13 +2,13 @@ import { Component, OnInit, AfterViewInit, OnDestroy, NgZone, ElementRef, ViewCh
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
-import { fadeInOut, fadeIn } from '../animations';
+import { fadeInOut, fadeIn, collapse } from '../animations';
 
 @Component( {
   selector: 'az-header',
   templateUrl: './header.component.html',
   styleUrls: [ './header.component.scss' ],
-  animations: [ fadeInOut, fadeIn ]
+  animations: [ fadeInOut, fadeIn, collapse ]
 } )
 export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
@@ -23,9 +23,18 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     private zone: NgZone
   ) { }
 
+  public collapsed = true;
+
+  public toggleCollapsed() {
+    this.collapsed = !this.collapsed;
+  }
+
+  public collapse() {
+    this.collapsed = true;
+  }
+
   public ngOnInit(): void {
 
-    // Collapse the navbar on mobile navigation
     this.router.events.pipe(
       filter( e => e instanceof NavigationEnd )
     ).subscribe( ( e: NavigationEnd ) => {

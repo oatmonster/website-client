@@ -1,3 +1,12 @@
-.body {
+@use 'mixins';
+
+main {
+  @include mixins.container;
   min-height: 100vh;
+}
+
+.alerts {
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
