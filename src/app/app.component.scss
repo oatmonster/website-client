@@ -1,5 +1,9 @@
 @use 'mixins';
 
+header {
+  display: inline;
+}
+
 main {
   @include mixins.container;
   min-height: 100vh;

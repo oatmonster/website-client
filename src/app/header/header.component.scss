@@ -128,10 +128,13 @@ ul.navbar-links {
   width: 100%;
   overflow: hidden;
 
+  display: flex;
+  flex-direction: column;
+
   @include breakpoints.desktop {
+    flex-direction: row;
     order: 1;
     width: auto;
-    display: block;
     height: 100% !important;
   }
 }
@@ -141,11 +144,6 @@ ul.navbar-links {
   font-weight: 300;
 
   padding: 5px;
-
-  @include breakpoints.desktop {
-    
-  float: left;
-  }
 
   a {
     color: map-get($colors, 'inactive');
@@ -174,6 +172,6 @@ ul.navbar-links {
   position: absolute;
   height: 0px;
 	left: 0px;
-  width: 0px;
-  top: -5px;
+  width: 100%;
+  top: -1px;
 }
