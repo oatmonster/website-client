@@ -29,17 +29,18 @@
   width: 100%;
   top: 0;
   z-index: 1020;
-
-  @include breakpoints.desktop {
-    position: sticky;
-  }
-
   min-height: 68px;
 
   padding-top: 10px;
   padding-bottom: 10px;
 
   background: var(--background);
+
+  box-shadow: 0 2px 2px rgba(0,0,0,.1);
+  @include breakpoints.desktop {
+    position: sticky;
+    box-shadow: none;
+  }
 }
 
 .mobile-spacer {
