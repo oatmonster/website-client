@@ -1,3 +1,5 @@
+@use 'sass:map';
+@use 'variables' as *;
 @use 'breakpoints';
 
 .blog-list {
@@ -29,6 +31,37 @@
 
   @include breakpoints.desktop {
     border-top: 1px solid var(--muted);
+  }
+}
+
+.pagination {
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+  >li {
+    margin-left: 5px;
+    margin-right: 5px;
+
+    font-weight: 500;
+
+    &.disabled, &.divider, &.active {
+      cursor: default;
+      color: map-get($colors, 'muted')
+    }
+
+    &.page-link:not(disabled) {
+      >a{
+        color: map-get($colors, 'on-background');
+
+        &:hover {
+          color: lighten(map-get($colors, 'on-background'), 25%);
+        }
+      }
+    }
   }
 }
 
