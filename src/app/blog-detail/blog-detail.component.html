@@ -4,9 +4,11 @@
           {{ thumbnailUrl() + '_1920w.jpg' }} 1920w" alt="{{ post.title }}">
 
     <h1 class="blog-title">{{ post.title }}</h1>
-    <span class="blog-subtitle">{{ post.subtitle }}</span>
+    <p class="blog-subtitle">{{ post.subtitle }}</p>
     <hr>
-    <time class="blog-post-date" [attr.datetime]="post.date">{{ date() }}</time>
+    <p *ngIf="post.date" class="blog-date">
+      <time [attr.datetime]="post.date">{{ date() }}</time>
+    </p>
     <hr>
   </header>
   <markdown [id]="post.id" [type]="'blog'" [markdown]="post.content"></markdown>
