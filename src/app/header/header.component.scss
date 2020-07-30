@@ -124,12 +124,11 @@
   }
 }
 
-ul.navbar-links {
+.navbar-links {
   list-style-type: none;
   margin-top: auto;
   margin-bottom: auto;
   padding: 0;
-  text-align: center;
 
   order: 3;
   width: 100%;
@@ -151,6 +150,8 @@ ul.navbar-links {
   font-weight: 300;
 
   margin: 5px 15px;
+
+  text-align: center;
 
   a {
     color: map-get($colors, 'inactive');

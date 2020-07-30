@@ -10,6 +10,8 @@
   justify-content: center;
   align-items: center;
 
+  margin-top: 2rem;
+
   padding-top: 2rem;
   padding-bottom: 2rem;
 
@@ -30,7 +32,6 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  text-align: center;
 
   display: flex;
   flex-direction: column;
@@ -44,9 +45,19 @@
   font-size: 1.5em;
   font-weight: 300;
 
-  width: 150px;
+  width: 130px;
 
   margin: 5px 15px;
+
+  text-align: center;
+
+  &.left-link {
+    text-align: right;
+  }
+
+  &.right-link {
+    text-align: left;
+  }
 
   a {
     color: map-get($colors, 'on-primary');
