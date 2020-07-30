@@ -52,11 +52,15 @@
   text-align: center;
 
   &.left-link {
-    text-align: right;
+    @include breakpoints.tablet {
+      text-align: right;
+    }
   }
 
   &.right-link {
-    text-align: left;
+    @include breakpoints.tablet {
+      text-align: left;
+    }
   }
 
   a {
