@@ -23,7 +23,7 @@
   </li>
   <ng-container *ngFor="let pageLink of pageList">
     <li class="page-link" [ngClass]="{ 'active': page === pageLink }">
-      <a *ngIf="pageLink !== page; else currentPage" class="page-link"
+      <a *ngIf="pageLink !== page; else currentPage"
         [attr.rel]="page === pageLink-1 ? 'next' : page === pageLink+1 ? 'prev' : null" [routerLink]="['/blog']"
         [queryParams]="{ page: pageLink }">{{ pageLink }}</a>
       <ng-template #currentPage>

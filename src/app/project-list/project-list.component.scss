@@ -1,3 +1,61 @@
+@use 'sass:map';
+@use 'variables' as *;
+@use 'breakpoints';
+
+.desktop-project-select {
+  display: none;
+
+  @include breakpoints.tablet {
+    display: block;
+  }
+}
+
+.mobile-project-select-temp {
+  width: 100%;
+  height: 48px;
+
+  background: 0;
+
+  padding-left: 15px;
+
+  font-size: 1rem;
+  font-family: $font-family-sans-serif;
+
+  @include breakpoints.tablet {
+    display: none;
+  }
+}
+
+.project-list {
+  @include breakpoints.tablet {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) 5fr;
+  }
+}
+
+.project-links {
+  position: fixed;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.project-link {
+  padding-bottom: 18px;
+
+  a {
+    color: map-get($colors, 'inactive');
+
+    &:hover {
+      color: darken(map-get($colors, 'inactive'), 25%);
+    }
+
+    &.active {
+      color: map-get($colors, 'on-background');
+    }
+  }
+}
+
+
 // .nav-item {
 //   padding-left: 13px;
 // }
@@ -8,15 +66,15 @@
 //   padding-left: 8px;
 // }
 
-.dropdown-toggle {
-  width: 100%;
-}
+// .dropdown-toggle {
+//   width: 100%;
+// }
 
-.dropdown-toggle::after {
-  float: right;
-  margin-top: 12px;
-}
+// .dropdown-toggle::after {
+//   float: right;
+//   margin-top: 12px;
+// }
 
-.dropdown-menu {
-  width: 100%;
-}
+// .dropdown-menu {
+//   width: 100%;
+// }

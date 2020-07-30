@@ -1,35 +1,24 @@
-<div *ngIf="this.project !== null; else notFound">
-  <div class="row">
-    <div class="col-lg-2">
-      <!-- Desktop nav -->
-      <nav class="navbar navbar-light pl-0 d-none d-lg-block">
-        <ul class="nav navbar-nav flex-column">
-          <li class="nav-item" routerLinkActive="active" *ngFor="let project of projects">
-            <a class="nav-link" [routerLink]="['/projects/' + project.id]">{{ project.title }}</a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- Mobile dropdown -->
-      <div class="dropdown mb-2 d-lg-none">
-        <button class="btn btn-lg dropdown-toggle border text-left" type="button" data-toggle="dropdown">
-          {{ project ? project.title : 'Select a Project...' }}</button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" *ngFor="let project of projects" routerLinkActive="active"
-            [routerLink]="['/projects/' + project.id]">
-            {{ project.title }}
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg">
-      <az-project-detail *ngIf="project !== undefined; else overview" [project]="project">
-      </az-project-detail>
-      <ng-template #overview>
-        Project Overview
-      </ng-template>
-    </div>
-  </div>
+<div *ngIf="this.project !== null; else notFound" class="project-list">
+  <nav class="desktop-project-select">
+    <ul class="project-links">
+      <li class="project-link" *ngFor="let project of projects">
+        <a [routerLink]="['/projects/' + project.id]" routerLinkActive="active">{{ project.title }}</a>
+      </li>
+    </ul>
+  </nav>
+  <select class="mobile-project-select-temp">
+    <option>Mobile Project Select Placeholder</option>
+    <option *ngFor="let project of projects">
+      {{ project.title }}
+    </option>
+  </select>
+  <article>
+    <az-project-detail *ngIf="project !== undefined; else overview" [project]="project">
+    </az-project-detail>
+    <ng-template #overview>
+      Project Overview
+    </ng-template>
+  </article>
 </div>
 <ng-template #notFound>
   <az-not-found></az-not-found>
