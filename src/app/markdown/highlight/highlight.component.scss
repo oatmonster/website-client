@@ -2,5 +2,9 @@
 
 pre {
   background: var(--secondary) !important;
+
+  * {
+    background: 0 !important;
+  }
 }
 
