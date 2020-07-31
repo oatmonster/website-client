@@ -1,10 +1,12 @@
-@import '../../../../node_modules/prismjs/themes/prism.css';
+@use '../../../../node_modules/prismjs/themes/prism.css';
+@use 'variables' as *;
 
 pre {
   background: var(--secondary) !important;
 
   * {
     background: 0 !important;
+    font-family: $font-family-monospace !important;
   }
 }
 
