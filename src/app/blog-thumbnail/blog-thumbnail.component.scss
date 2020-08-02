@@ -41,12 +41,16 @@
 }
 
 .blog-title {
-  margin-top: 0;
+  margin-top: 8px;
   a {
     color: map-get($colors, 'on-background');
   }
   a:hover {
     color: lighten(map-get($colors, 'on-background'), 25%)
+  }
+
+  @include breakpoints.desktop {
+    margin-top: 0;
   }
 }
 
