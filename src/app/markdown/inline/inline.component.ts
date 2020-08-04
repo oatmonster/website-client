@@ -23,8 +23,9 @@ export class MarkdownInlineComponent {
   public _T( value: string ) { return value || ''; }
 
   // Image URL from API
-  public imageUrl( url: string ): string {
-    return environment.imageUrl + '/' + this.tree.type + '/' + this.tree.id + '/' + url;
+  public imageUrl( url: string, webp = false ): string {
+    if ( webp ) return environment.imageUrl + '/' + this.tree.type + '/' + this.tree.id + '/' + url.replace( /\.[^/.]+$/, ".webp" );
+    else return environment.imageUrl + '/' + this.tree.type + '/' + this.tree.id + '/' + url;
   }
 
   public rootUrl(): string {

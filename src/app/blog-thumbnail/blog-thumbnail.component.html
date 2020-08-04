@@ -1,7 +1,10 @@
 <article class=blog-thumbnail>
   <div class="image-container">
     <a [routerLink]="['/blog/' + post.id]">
-      <img class="thumbnail-image" src="{{ thumbnailUrl() + '_960w.jpg' }}" alt="{{ post.title }}">
+      <picture>
+        <source [srcset]="thumbnailUrl() + '_960w.webp'">
+        <img class="thumbnail-image" [src]="thumbnailUrl() + '_960w.jpg'" [alt]="post.title">
+      </picture>
     </a>
   </div>
   <div class="blog-details">

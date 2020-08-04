@@ -1,6 +1,9 @@
 <article class="blog" *ngIf="this.post; else notFound">
   <header>
-    <img class="thumbnail" src="{{ thumbnailUrl() + '_1920w.jpg' }}" alt="{{ post.title }}">
+    <picture>
+      <source srcset [srcset]="thumbnailUrl() + '_1920w.webp'">
+      <img class="thumbnail" [src]="thumbnailUrl() + '_1920w.jpg'" [alt]="post.title">
+    </picture>
 
     <h1 class="blog-title">{{ post.title }}</h1>
     <p class="blog-subtitle">{{ post.subtitle }}</p>
