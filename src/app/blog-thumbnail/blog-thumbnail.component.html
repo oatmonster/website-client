@@ -2,7 +2,7 @@
   <div class="image-container">
     <a [routerLink]="['/blog/' + post.id]">
       <picture>
-        <source [srcset]="thumbnailUrl() + '_960w.webp'">
+        <source [srcset]="thumbnailUrl() + '_960w.webp'" type="image/webp">
         <img class="thumbnail-image" [src]="thumbnailUrl() + '_960w.jpg'" [alt]="post.title">
       </picture>
     </a>

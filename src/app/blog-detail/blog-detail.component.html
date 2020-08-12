@@ -1,7 +1,7 @@
 <article class="blog" *ngIf="this.post; else notFound">
   <header>
     <picture>
-      <source [srcset]="thumbnailUrl() + '_1920w.webp'">
+      <source [srcset]="thumbnailUrl() + '_1920w.webp'" type="image/webp">
       <img class="thumbnail" [src]="thumbnailUrl() + '_1920w.jpg'" [alt]="post.title">
     </picture>
 
