@@ -13,11 +13,12 @@
     </option>
   </select>
   <article>
-    <az-project-detail *ngIf="project !== undefined; else overview" [project]="project">
+    <router-outlet></router-outlet>
+    <!-- <az-project-detail *ngIf="project !== undefined; else overview" [project]="project">
     </az-project-detail>
     <ng-template #overview>
       Project Overview
-    </ng-template>
+    </ng-template> -->
   </article>
 </div>
 <ng-template #notFound>

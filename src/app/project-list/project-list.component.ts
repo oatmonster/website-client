@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { IProject, ApiService } from '../api.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component( {
   selector: 'az-project-list',
@@ -14,12 +13,9 @@ export class ProjectListComponent implements OnInit {
 
   public projects: IProject[];
 
-  constructor( private apiService: ApiService, private activatedRoute: ActivatedRoute, ) { }
+  constructor( private apiService: ApiService ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe( ( data: { content: IProject } ) => {
-      this.project = data.content;
-    } );
     this.apiService.getProjects().subscribe( res => {
       this.projects = res;
     } );

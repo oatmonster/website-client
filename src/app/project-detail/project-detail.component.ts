@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { IProject } from '../api.service';
 
@@ -12,9 +13,12 @@ export class ProjectDetailComponent implements OnInit {
   @Input()
   project: IProject;
 
-  constructor() { }
+  constructor( private activatedRoute: ActivatedRoute ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe( ( data: { content: IProject } ) => {
+      this.project = data.content;
+    } );
   }
 
   range( n: number ) {
