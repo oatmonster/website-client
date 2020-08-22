@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "alex-zhao-blog": {
+    "blog-client": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/alex-zhao-blog",
+            "outputPath": "dist/blog-client",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,16 +70,16 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "alex-zhao-blog:build"
+            "browserTarget": "blog-client:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "alex-zhao-blog:build:production"
+              "browserTarget": "blog-client:build:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "alex-zhao-blog"
+  "defaultProject": "blog-client"
 }

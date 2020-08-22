@@ -9,7 +9,7 @@ registerPlugin( 'render', 'removeLogosPlugin', removeLogosPlugin );
 
 export const config: ScullyConfig = {
   projectRoot: "./src",
-  projectName: "alex-zhao-blog",
+  projectName: "blog-client",
   outDir: './dist/static',
   defaultPostRenderers: [ 'removeLogosPlugin' ],
   routes: {
