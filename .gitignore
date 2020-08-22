@@ -9,6 +9,10 @@
 # Dependencies
 /node_modules
 
+# Scully
+scully.log
+.scully
+
 # System files
 .DS_Store
 Thumbs.db

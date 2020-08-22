@@ -91,7 +91,7 @@
   display: none;
 
   @include breakpoints.desktop {
-    display: block;
+    display: inline;
   }
 }
 

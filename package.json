@@ -1,10 +1,12 @@
 {
-  "name": "alex-zhao",
-  "version": "1.3.4",
+  "name": "alex-zhao-blog",
+  "version": "1.4.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "scully": "scully",
+    "scully:serve": "scully serve"
   },
   "private": true,
   "license": "MIT",
@@ -17,6 +19,9 @@
     "@angular/platform-browser": "~9.1.11",
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
+    "@scullyio/init": "^1.0.0-beta.3",
+    "@scullyio/ng-lib": "^1.0.0-beta.2",
+    "@scullyio/scully": "^1.0.0-beta.2",
     "path": "^0.12.7",
     "prismjs": "^1.19.0",
     "regenerator-runtime": "^0.13.5",
