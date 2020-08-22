@@ -46,7 +46,10 @@ export class MetaService {
         this.prevURL.remove();
       } ),
       map( () => {
-        const child = this.activatedRoute.firstChild;
+        var child = this.activatedRoute.firstChild;
+        while ( child.firstChild ) {
+          child = child.firstChild;
+        }
         if ( child.snapshot.data[ 'content' ] === null ) {
           return 'Page Not Found';
         } else if ( child.snapshot.data[ 'content' ] && child.snapshot.data[ 'content' ][ 'title' ] ) {

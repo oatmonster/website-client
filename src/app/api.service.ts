@@ -68,7 +68,7 @@ export interface IProject {
   id: string;
   title: string;
   images?: {
-    id: string;
+    filename: string;
     title: string;
     caption: string;
   }[];

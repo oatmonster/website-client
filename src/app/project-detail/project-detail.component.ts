@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { IProject } from '../api.service';
+import { environment } from 'src/environments/environment';
 
 @Component( {
   selector: 'az-project-detail',
@@ -21,8 +22,9 @@ export class ProjectDetailComponent implements OnInit {
     } );
   }
 
-  range( n: number ) {
-    return Array( n );
+  public imageUrl( url: string, webp = false ): string {
+    if ( webp ) return environment.imageUrl + '/projects/' + this.project.id + '/' + url.replace( /\.[^/.]+$/, ".webp" );
+    else return environment.imageUrl + '/projects/' + this.project.id + '/' + url;
   }
 
 }

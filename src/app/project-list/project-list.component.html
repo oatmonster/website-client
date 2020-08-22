@@ -2,7 +2,7 @@
   <nav class="desktop-project-select">
     <ul class="project-links">
       <li class="project-link" *ngFor="let project of projects">
-        <a [routerLink]="['/projects/' + project.id]" routerLinkActive="active">{{ project.title }}</a>
+        <a [routerLink]="[project.id]" routerLinkActive="active">{{ project.title }}</a>
       </li>
     </ul>
   </nav>
@@ -14,11 +14,6 @@
   </select>
   <article>
     <router-outlet></router-outlet>
-    <!-- <az-project-detail *ngIf="project !== undefined; else overview" [project]="project">
-    </az-project-detail>
-    <ng-template #overview>
-      Project Overview
-    </ng-template> -->
   </article>
 </div>
 <ng-template #notFound>

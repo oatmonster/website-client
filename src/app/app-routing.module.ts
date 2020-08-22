@@ -13,13 +13,6 @@ import { BlogResolverService } from './blog-detail/blog-resolver.service';
 import { ProjectResolverService } from './project-detail/project-resolver.service';
 
 const appRoutes: Routes = [
-  // {
-  //   path: 'projects/:id',
-  //   component: ProjectListComponent,
-  //   resolve: {
-  //     content: ProjectResolverService
-  //   }
-  // },
   {
     path: 'projects',
     component: ProjectListComponent,

@@ -1,3 +1,12 @@
-<p *ngFor="let i of range(10)">
+<ng-container *ngFor="let image of project.images">
+  <picture>
+    <source [srcset]="imageUrl(image.filename, true)" type="image/webp">
+    <img class="project-image" [src]="imageUrl(image.filename)" [title]="image.title" [alt]="image.caption">
+  </picture>
+  <div>{{ image.caption }}</div>
+  <br>
+</ng-container>
+
+<p>
   {{ project.description }}
 </p>
