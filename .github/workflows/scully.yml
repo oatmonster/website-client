@@ -21,7 +21,7 @@ jobs:
     - run: npm run build -- --prod
     - run: npm run scully
     - name: S3 Sync
-    - uses: jakejarvis/s3-sync-action@0.5.1
+      uses: jakejarvis/s3-sync-action@0.5.1
       with:
         args: ${{ secrets.AWS_S3_ARGS }}
       env:
