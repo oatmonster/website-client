@@ -1,4 +1,4 @@
-name: Scully
+name: Build and Deploy Scully
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  scully:
+  build-and-deploy:
 
     runs-on: ubuntu-latest
 
