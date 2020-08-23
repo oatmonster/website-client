@@ -9,9 +9,6 @@ import { environment } from '../environments/environment';
 } )
 export class ApiService {
 
-  private projects;
-  private projectMap;
-
   constructor( private httpClient: HttpClient ) { }
 
   public getBlogPosts( query?: { page?: number, tags?: string[] } ): Observable<{ posts: Array<IBlogPost>, count: number }> {

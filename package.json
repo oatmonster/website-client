@@ -1,5 +1,6 @@
 {
   "name": "blog-client",
+  "author": "Alex Zhao",
   "version": "1.4.1",
   "scripts": {
     "ng": "ng",
