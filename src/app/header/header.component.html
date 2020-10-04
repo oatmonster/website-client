@@ -4,7 +4,7 @@
 </div>
 
 <!-- Navbar -->
-<nav class="navbar" [ngClass]="{ 'navbar-shadow': isStuck() }" sc-no-render>
+<nav class="navbar" [ngClass]="{ 'navbar-shadow': isStuck() }">
   <div class="navbar-container">
     <div #stickySentinel class="sticky-sentinel"></div>
     <div class="navbar-left">
@@ -13,7 +13,7 @@
           <path d="M4 7h22M4 15h22M4 23h22" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" />
         </svg>
       </button>
-      <a class="navbar-logo" *ngIf="isStuck()" [routerLink]="['/']" [@fadeInOut]>
+      <a class="navbar-logo" *ngIf="isStuck()" [routerLink]="['/']" [@fadeInOut] sc-no-render>
         ALEX ZHAO
       </a>
     </div>
