@@ -49,6 +49,11 @@ const appRoutes: Routes = [
     component: HomeComponent,
   },
   {
+    path: '404',
+    component: NotFoundComponent,
+    data: { title: 'Not Found' }
+  },
+  {
     path: '**',
     component: NotFoundComponent,
     data: { title: 'Not Found' }
