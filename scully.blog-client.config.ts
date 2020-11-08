@@ -19,14 +19,17 @@ export const config: ScullyConfig = {
         resultsHandler: ( res ) => res.posts,
         url: 'https://alex-zhao-api.herokuapp.com/blog?count=100',
         property: 'id',
-      },
+      }
+    },
+    '/blog': {
+      type: 'ignored'
     },
     '/projects/:id': {
       type: 'json',
       id: {
         url: 'https://alex-zhao-api.herokuapp.com/projects',
         property: 'id',
-      },
+      }
     }
   }
 };
