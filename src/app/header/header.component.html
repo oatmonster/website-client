@@ -1,6 +1,6 @@
 <!-- Main Header -->
 <div class="title" *ngIf="displayTitle()" [@fadeIn]>
-  <a [routerLink]="['/']" sc-no-render>ALEX ZHAO</a>
+  <a [routerLink]="['/']">ALEX ZHAO</a>
 </div>
 
 <!-- Navbar -->
@@ -13,7 +13,7 @@
           <path d="M4 7h22M4 15h22M4 23h22" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" />
         </svg>
       </button>
-      <a class="navbar-logo" *ngIf="isStuck()" [routerLink]="['/']" [@fadeInOut] sc-no-render>
+      <a class="navbar-logo" *ngIf="isStuck()" [routerLink]="['/']" [@fadeInOut]>
         ALEX ZHAO
       </a>
     </div>

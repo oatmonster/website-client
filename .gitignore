@@ -9,11 +9,6 @@
 # Dependencies
 /node_modules
 
-# Scully
-scully.log
-.scully
-src/assets/scully-routes.json
-
 # System files
 .DS_Store
 Thumbs.db

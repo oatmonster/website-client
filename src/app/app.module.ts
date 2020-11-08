@@ -17,7 +17,6 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogThumbnailComponent } from './blog-thumbnail/blog-thumbnail.component';
 import { AboutComponent } from './about/about.component';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule( {
   imports: [
@@ -25,8 +24,7 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
     BrowserAnimationsModule,
     HttpClientModule,
     MarkdownModule,
-    AppRoutingModule,
-    ScullyLibModule
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,

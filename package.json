@@ -5,9 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "scully": "scully",
-    "scully:serve": "scully serve"
+    "build": "ng build"
   },
   "private": true,
   "license": "MIT",
@@ -20,8 +18,6 @@
     "@angular/platform-browser": "~9.1.11",
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
-    "@scullyio/ng-lib": "^1.0.0",
-    "@scullyio/scully": "^1.0.4",
     "path": "^0.12.7",
     "prismjs": "^1.19.0",
     "regenerator-runtime": "^0.13.5",
