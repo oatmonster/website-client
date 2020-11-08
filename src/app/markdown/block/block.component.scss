@@ -4,10 +4,24 @@ markdown {
   &[inline] { * { display: inline; } }
 
   // Table cells alignement
-  td {
+  td, th {
     &[md-align="left"] { text-align: left; }
     &[md-align="center"] { text-align: center; }
     &[md-align="right"] { text-align: right; }
+  }
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-width: 1px;
+    border-style: solid;
+    border-collapse: collapse;
+    border-color: var(--on-background);
+    td, th {
+      border-width: 1px;
+      border-style: solid;
+      border-color: var(--on-background);
+    }
   }
 
   .embeded-video {

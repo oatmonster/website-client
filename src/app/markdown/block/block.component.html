@@ -28,9 +28,15 @@
     <!-- Tables -->
     <table *ngSwitchCase="'table'">
       <tbody>
-        <tr *ngFor="let row of child.children">
-          <td *ngFor="let cell of row.children; index as i" [attr.md-align]="child.align[i]||''" [md-inline]="cell">
-          </td>
+        <tr *ngFor="let row of child.children; let i = index">
+          <ng-container *ngIf="i === 0; else tableRow">
+            <th *ngFor="let cell of row.children; index as j" [attr.md-align]="child.align[j]||''" [md-inline]="cell">
+            </th>
+          </ng-container>
+          <ng-template #tableRow>
+            <td *ngFor="let cell of row.children; index as j" [attr.md-align]="child.align[j]||''" [md-inline]="cell">
+            </td>
+          </ng-template>
         </tr>
       </tbody>
     </table>
