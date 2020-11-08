@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
     "path": "^0.12.7",
-    "prismjs": "^1.19.0",
+    "prismjs": "^1.21.0",
     "regenerator-runtime": "^0.13.5",
     "remark-align": "^1.2.13",
     "remark-iframes": "^4.0.4",
