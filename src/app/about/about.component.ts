@@ -9,6 +9,7 @@ export class AboutComponent implements OnInit {
 
 
   public skills: string[] = [
+    'Kubernetes',
     'OpenCV',
     'TensorFlow',
     'ROS',
@@ -18,9 +19,10 @@ export class AboutComponent implements OnInit {
 
   public strongSkills: string[] = [
     'Angular',
-    'Electron',
     'NodeJS',
     'Express',
+    'Docker',
+    'Electron',
     'HTML/CSS',
     'Javascript',
     'TypeScript',
