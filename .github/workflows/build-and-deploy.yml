@@ -1,0 +1,38 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: master
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm ci
+    - run: npm run build -- --prod
+    - name: AWS S3 Sync
+      uses: jakejarvis/s3-sync-action@be0c4ab89158cac4278689ebedd8407dd5f35a83
+      with:
+        args: ${{ secrets.AWS_S3_ARGS }}
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_S3_REGION }}
+        SOURCE_DIR: 'dist/blog-client'
+    - name: AWS Cloudfront Invalidate
+      uses: chetan/invalidate-cloudfront-action@00d50031f6b55bac485c63d8789c6c346645d1a5
+      env:
+        DISTRIBUTION: ${{ secrets.AWS_CF_ID }}
+        PATHS: '/*'
+        AWS_REGION: ${{ secrets.AWS_CF_REGION }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
