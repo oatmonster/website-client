@@ -14,7 +14,10 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "url": ["node_modules/url"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
