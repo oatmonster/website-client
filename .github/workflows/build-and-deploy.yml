@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: '12.x'
     - run: npm ci
-    - run: npm run build -- --prod
+    - run: npm run build -- --configuration production
     - name: AWS S3 Sync
       uses: jakejarvis/s3-sync-action@be0c4ab89158cac4278689ebedd8407dd5f35a83
       with:
