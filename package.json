@@ -24,11 +24,11 @@
     "regenerator-runtime": "^0.13.5",
     "remark-align": "^1.2.14",
     "remark-iframes": "^4.0.5",
-    "remark-parse": "^10.0.1",
+    "remark-parse": "^7.0.2",
     "remark-sub-super": "^1.0.20",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "unified": "^10.1.2",
+    "unified": "^8.4.2",
     "unist-util-visit": "^4.1.0",
     "url": "^0.11.0",
     "zone.js": "~0.11.4"
