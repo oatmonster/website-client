@@ -1,6 +1,6 @@
 <!-- Main Header -->
 <div class="title" *ngIf="displayTitle()" [@fadeIn]>
-  <a [routerLink]="['/']">ALEX ZHAO</a>
+  <a [routerLink]="['/blog']">ALEX ZHAO</a>
 </div>
 
 <!-- Navbar -->
@@ -13,24 +13,24 @@
           <path d="M4 7h22M4 15h22M4 23h22" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2" />
         </svg>
       </button>
-      <a class="navbar-logo" *ngIf="isStuck()" [routerLink]="['/']" [@fadeInOut]>
+      <a class="navbar-logo" *ngIf="isStuck()" [routerLink]="['/blog']" [@fadeInOut]>
         ALEX ZHAO
       </a>
     </div>
     <span class="navbar-mobile-logo">ALEX ZHAO</span>
     <ul class="navbar-links" [@collapse]="collapsed ? 'collapsed' : 'expanded'">
       <li class="navbar-link navbar-home-link">
-        <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        <a [routerLink]="['/blog']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
           (click)="collapse()">HOME</a>
       </li>
       <li class="navbar-link">
         <a [routerLink]="['/blog']" routerLinkActive="active" (click)="collapse()">BLOG</a>
       </li>
       <li class="navbar-link">
-        <a [routerLink]="['/projects']" routerLinkActive="active" (click)="collapse()">PROJECTS</a>
+        <a routerLinkActive="active" (click)="collapse()">PROJECTS</a>
       </li>
       <li class="navbar-link">
-        <a [routerLink]="['/about']" routerLinkActive="active" (click)="collapse()">ABOUT</a>
+        <a routerLinkActive="active" (click)="collapse()">ABOUT</a>
       </li>
     </ul>
     <div class="navbar-right"></div>
