@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://alex-zhao-api.herokuapp.com',
+  apiUrl: 'https://api.alexzhao.me',
   imageUrl: 'https://www.alexzhao.me/images',
   rootUrl: 'https://www.alexzhao.me'
 };
